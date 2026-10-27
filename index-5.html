@@ -30,6 +30,7 @@ main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;overflow
 #time{font-size:min(21vw,96px);font-weight:700;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1.1;margin-top:3vh}
 #time.ready{color:var(--ok)} #time.hold{color:var(--bad)}
 #scr{text-align:center;color:var(--dim);letter-spacing:.01em;padding:1.5vh 14px;font-size:12px;line-height:1.5;min-height:3em}
+@media (min-width:700px){#v-timer{position:relative}#v-timer .foot{position:absolute;left:0;right:0;bottom:0;pointer-events:none}#cube{padding-bottom:8px!important}}
 #cube{flex:1;min-height:200px;display:flex;align-items:center;justify-content:center;min-height:0;padding:4px 0}
 #cube svg{height:100%;max-height:260px;width:auto;max-width:100%}
 .foot{display:flex;justify-content:space-between;align-items:flex-end;padding:12px 14px}
@@ -132,6 +133,15 @@ body.pixel nav{border-right:3px solid #2a3140}
 body.pixel nav button.on{background:#232a36}
 body.pixel .pad input,body.pixel .pad .btn{border:3px solid #000}
 body.pixel #time{letter-spacing:0}
+/* Larger timer, scramble and cube on desktop-width screens only */
+@media (min-width:900px){
+#time{font-size:min(16vw,22vh,200px)}
+#scr{font-size:clamp(18px,1.8vw,26px);max-width:1000px;margin:0 auto}
+#v-timer{position:relative}
+#v-timer .foot{position:absolute;left:0;right:0;bottom:0;pointer-events:none}
+#cube{padding:4px 0 10px}
+#cube svg,#cube canvas{max-height:min(54vh,580px)}
+}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
